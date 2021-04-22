@@ -2,7 +2,6 @@ const SerialPort = require("serialport");
 const Readline = require("@serialport/parser-readline");
 const inp_out = require("console-read-write");
 
-var a = 0.0;
 const getPortsList = async () => {
   const ports = await SerialPort.list();
 
@@ -20,7 +19,7 @@ const getPortsList = async () => {
   }
 
   async function print() {
-    a = "COM" + (await main());
+    var a = "COM" + (await main());
     console.log(`${a}`);
 
     const port = new SerialPort(`${a}`);
