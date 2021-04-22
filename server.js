@@ -12,21 +12,14 @@ const getPortsList = async () => {
     };
     console.log("Port:", portInfo);
   });
-
-  // Function to take input from the user about the port to communicate
-  async function main() {
-    return await inp_out.ask("Enter the port Number:");
-  }
-
-  async function print() {
-    var a = "COM" + (await main());
-    console.log(`You are connecting to ${a}`);
-
-    const port = new SerialPort(`${a}`);
-
-    const parser = port.pipe(new Readline({ delimiter: "\n" }));
-    parser.on("data", console.log);
-  }
-  print();
 };
-getPortsList();
+
+getPortsList().then(async () => {
+  var a ="COM" + await inp_out.ask("Enter the port Number:");
+  console.log(`You are connecting to ${a}`);
+  const portConnect = new SerialPort(`${a}`);
+  const parser = portConnect.pipe(new Readline({ delimiter: "\n" }));
+  parser.on("data", (e) => {
+    console.log(`${e}`);
+  });
+});
