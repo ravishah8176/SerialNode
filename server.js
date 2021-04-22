@@ -1,6 +1,5 @@
-
-const SerialPort = require('serialport');
-const Readline = require('@serialport/parser-readline')
+const SerialPort = require("serialport");
+const Readline = require("@serialport/parser-readline");
 const inp_out = require("console-read-write");
 
 var a = 0.0;
@@ -12,12 +11,12 @@ const getPortsList = async () => {
       portPath: port.path,
       portManufacturer: port.manufacturer,
     };
-    console.log("Port: ", portInfo);
+    console.log("Port:", portInfo);
   });
 
   // Function to take input from the user about the port to communicate
   async function main() {
-    return await inp_out.ask("Enter the port Number: ");
+    return await inp_out.ask("Enter the port Number:");
   }
 
   async function print() {
@@ -25,10 +24,10 @@ const getPortsList = async () => {
     console.log(`${a}`);
 
     const port = new SerialPort(`${a}`);
-  
-    const parser = port.pipe(new Readline({ delimiter: '\r\n' }))
-    parser.on('data', console.log)
+
+    const parser = port.pipe(new Readline({ delimiter: "\n" }));
+    parser.on("data", console.log);
   }
-  print();  
+  print();
 };
 getPortsList();
