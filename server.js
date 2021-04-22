@@ -19,7 +19,7 @@ getPortsList().then(async () => {
   console.log(`You are connecting to ${a}`);
   const portConnect = new SerialPort(`${a}`);
   const parser = portConnect.pipe(new Readline({ delimiter: "\n" }));
-  parser.on("data", (e) => {
+  parser.on("data", (e) => {git 
     console.log(`${e}`);
   });
 });
