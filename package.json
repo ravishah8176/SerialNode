@@ -1,0 +1,14 @@
+{
+  "name": "serialnodecommunication",
+  "version": "1.0.0",
+  "description": "This is the method used to communicate with devicw port",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ravi Shah",
+  "license": "ISC",
+  "dependencies": {
+    "serialport": "^9.0.7"
+  }
+}
