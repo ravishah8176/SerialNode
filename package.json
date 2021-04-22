@@ -9,6 +9,7 @@
   "author": "Ravi Shah",
   "license": "ISC",
   "dependencies": {
+    "console-read-write": "^0.1.1",
     "serialport": "^9.0.7"
   }
 }
