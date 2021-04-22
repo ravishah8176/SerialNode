@@ -4,7 +4,6 @@ const inp_out = require("console-read-write");
 
 const getPortsList = async () => {
   const ports = await SerialPort.list();
-
   ports.forEach((port) => {
     var portInfo = {
       portPath: port.path,
@@ -15,11 +14,11 @@ const getPortsList = async () => {
 };
 
 getPortsList().then(async () => {
-  var a ="COM" + await inp_out.ask("Enter the port Number:");
+  var a = "COM" + (await inp_out.ask("Enter the port Number:"));
   console.log(`You are connecting to ${a}`);
   const portConnect = new SerialPort(`${a}`);
   const parser = portConnect.pipe(new Readline({ delimiter: "\n" }));
-  parser.on("data", (e) => {git 
+  parser.on("data", (e) => {
     console.log(`${e}`);
   });
 });
