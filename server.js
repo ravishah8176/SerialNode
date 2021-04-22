@@ -20,7 +20,7 @@ const getPortsList = async () => {
 
   async function print() {
     var a = "COM" + (await main());
-    console.log(`${a}`);
+    console.log(`You are connecting to ${a}`);
 
     const port = new SerialPort(`${a}`);
 
