@@ -4,12 +4,18 @@
   "description": "This is the method used to communicate with devicw port",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start ": "node server",
+    "dev": "nodemon server"
   },
   "author": "Ravi Shah",
   "license": "ISC",
   "dependencies": {
     "console-read-write": "^0.1.1",
-    "serialport": "^9.0.7"
+    "express": "^4.17.1",
+    "serialport": "^9.0.7",
+    "socket.io": "^4.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
