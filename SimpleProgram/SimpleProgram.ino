@@ -10,12 +10,12 @@ void loop() {
     if(a%2 == 0){
       Serial.println(12.45);
       a += 1;
-      delay(500);      
+      delay(100);      
     }  
     else{
-    Serial.println(10.34);
+    Serial.println(9.34);
     a -= 1;
-    delay(500); 
+    delay(100); 
    }
  }
 }
